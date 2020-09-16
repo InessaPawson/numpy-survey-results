@@ -19,6 +19,8 @@ import matplotlib.pyplot as plt
 %matplotlib inline
 # Location of generated content
 os.makedirs('_generated', exist_ok=True)
+# For variable integration
+from myst_nb import glue
 ```
 
 ```{code-cell} ipython3
@@ -48,7 +50,7 @@ column_names = [
 ]
 demographics_dtype = np.dtype({
     "names": column_names,
-    "formats": ['<U512'] * len(column_names),
+    "formats": ['<U600'] * len(column_names),
 })
 
 data = np.loadtxt(
@@ -241,4 +243,210 @@ ax.barh(np.arange(len(cnts)), cnts, align='center')
 ax.set_yticks(np.arange(len(cnts)))
 ax.set_yticklabels(labels)
 ax.set_xlabel("Number of Respondents")
+fig.tight_layout()
 ```
+
+# Experience and Usage
+
+## Programming Experience
+
+```{code-cell} ipython3
+---
+tags: [hide-input]
+---
+fig, axes = plt.subplots(1, 2, figsize=(12, 6))
+# Ascending order for figure
+ind = np.array([-1, 0, 2, 3, 1])
+for exp_data, ax in zip(('programming_exp', 'numpy_exp'), axes):
+    # Analysis
+    prog_exp = data[exp_data][data[exp_data] != '']
+    labels, cnts = np.unique(prog_exp, return_counts=True)
+    cnts = 100 * cnts / cnts.sum()
+    labels, cnts = labels[ind], cnts[ind]
+    # Plotting
+    ax.bar(np.arange(len(cnts)), cnts)
+    ax.set_xticks(np.arange(len(cnts)))
+    ax.set_xticklabels(labels)
+axes[0].set_title('General Programming Experience')
+axes[0].set_ylabel('Percentage of Respondents')
+axes[1].set_title('Experience with NumPy');
+fig.autofmt_xdate();
+fig.tight_layout();
+```
+
+## Programming Languages
+
+Survey respondents reported being familiar with a wide range of other
+programming languages aside from Python.
+
+```{code-cell} ipython3
+---
+tags: [hide-input]
+---
+pl = data['prog_lang'][data['prog_lang'] != '']
+num_respondents = len(pl)
+# Flatten & remove 'Other' write-in option
+other = 'Other (please specify, using commas to separate individual entries)'
+apl = []
+for row in pl:
+    if 'Other' in row:
+        row = ','.join(row.split(',')[:-2])
+        if len(row) < 1:
+            continue
+    apl.extend(row.split(','))
+labels, cnts = np.unique(apl, return_counts=True)
+cnts = 100 * cnts / num_respondents
+I = np.argsort(cnts)
+labels, cnts = labels[I], cnts[I]
+
+fig, ax = plt.subplots(figsize=(12, 8))
+ax.barh(np.arange(len(cnts)), cnts, align='center')
+ax.set_yticks(np.arange(len(cnts)))
+ax.set_yticklabels(labels)
+ax.set_xlabel("Percentage of Respondents")
+ax.set_title("Programming Language Familiarity")
+fig.tight_layout()
+```
+
+{glue:text}`percent_other` percent of respondents reported familiarity with
+computer languages other than those listed above.
+Of these, {glue:text}`most_popular` was the most popular with 
+{glue:text}`most_popular_pct` percent of users using this language.
+A listing of other reported languages can be found below (click to expand).
+
+%TODO: Create mapping to consolidate write-in responses, e.g. 
+%Lisp, lisp, common lisp, elisp, all -> 'Lisp'
+
+```{code-cell} ipython3
+---
+tags: [remove-cell]
+---
+# Determine most popular 'other' language.
+plo = data['prog_lang_other'][data['prog_lang_other'] != '']
+# Process write-in field
+aplo = []
+for row in plo:
+    # NOTE: ignoring cases in language name
+    aplo.extend([l.strip().lower() for l in row.split(',')])
+labels, cnts = np.unique(aplo, return_counts=True)
+
+glue('percent_other', f'{100 * len(plo) / len(pl):1.1f}', display=False)
+#NOTE: capitalization doesn't generalize!
+glue('most_popular', labels[np.argmax(cnts)].capitalize(), display=False)
+glue('most_popular_pct', f'{100 * cnts.max() / len(pl):1.1f}', display=False)
+```
+
+```{code-cell} ipython3
+---
+tags: [remove-input, hide-output]
+---
+print(labels)
+```
+
+## NumPy Version
+
+NumPy 1.18 was the latest stable release at the time the survey was 
+conducted.
+{glue:text}`older_version_usage` percent of respondents report that they
+primarily use an older version of NumPy.
+
+```{code-cell} ipython3
+---
+tags: [hide-input]
+---
+vers = data['version'][data['version'] != '']
+labels, cnts = np.unique(vers, return_counts=True)
+
+fig, ax = plt.subplots(figsize=(12, 8))
+ax.pie(cnts, labels=labels, autopct='%1.1f%%')
+fig.tight_layout()
+
+# Percentage of users that use older versions
+older_version_usage = 100 * cnts[-4:-1].sum() / cnts.sum()
+glue('older_version_usage', f"{older_version_usage:1.1f}", display=False)
+```
+
+## Primary Use-Case
+
+1072 respondents provided information about the primary context in which they
+use NumPy.
+
+```{code-cell} ipython3
+---
+tags: [hide-input]
+---
+uses = data['primary_use'][data['primary_use'] != '']
+labels, cnts = np.unique(uses, return_counts=True)
+
+fig, ax = plt.subplots(figsize=(12, 8))
+ax.pie(cnts, labels=labels, autopct='%1.1f%%')
+fig.tight_layout()
+```
+
+## Frequency of Use
+
+1073 respondents provided information about how often they use NumPy.
+
+```{code-cell} ipython3
+---
+tags: [hide-input]
+---
+use_freq = data['use_freq'][data['use_freq'] != '']
+labels, cnts = np.unique(use_freq, return_counts=True)
+
+fig, ax = plt.subplots(figsize=(12, 8))
+ax.pie(cnts, labels=labels, autopct='%1.1f%%')
+fig.tight_layout()
+```
+
+## NumPy Components
+
+NumPy encompasses many packages for specific scientific computing tasks, such
+as random number generation or Fourier analysis.
+The following figure shows what percentage of respondents reported using each
+NumPy subpackage.
+
+```{code-cell} ipython3
+---
+tags: [hide-input]
+---
+components = data['components'][data['components'] != '']
+num_respondents = len(components)
+# Process components field
+all_components = []
+for row in components:
+    all_components.extend(row.split(','))
+all_components = np.array(all_components)
+labels, cnts = np.unique(all_components, return_counts=True)
+# Descending order
+I = np.argsort(cnts)
+labels, cnts = labels[I], cnts[I]
+cnts = 100 * cnts / num_respondents
+
+fig, ax = plt.subplots(figsize=(12, 8))
+ax.barh(np.arange(len(cnts)), cnts, align='center')
+ax.set_yticks(np.arange(len(cnts)))
+ax.set_yticklabels(labels)
+ax.set_xlabel("Percentage of Respondents")
+ax.set_title("Use-Frequency of NumPy Sub-Packages")
+fig.tight_layout()
+```
+
+## NumPy C-Extensions
+
+863 participants shared whether they (or their organization) uses custom
+C-extensions via the NumPy C-API (excluding Cython).
+
+```{code-cell} ipython3
+---
+tags: [hide-input]
+---
+uses_c_ext = data['use_c_ext']
+labels, cnts = np.unique(uses_c_ext, return_counts=True)
+labels[0] = 'No response'
+
+fig, ax = plt.subplots(figsize=(8, 8))
+ax.pie(cnts, labels=labels, autopct='%1.1f%%')
+fig.tight_layout()
+```
+

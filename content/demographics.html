@@ -41,6 +41,7 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Development and Community Contributions" href="contributions.html" />
     <link rel="prev" title="NumPy Community Survey Results - 2020" href="../index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -61,6 +62,14 @@
         
         <li class="nav-item active">
             <a class="nav-link" href="">Demographics</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href=""></a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="contributions.html">Development and Community Contributions</a>
         </li>
         
         
@@ -100,6 +109,10 @@
         
       
       
+      
+      
+      
+      
     </ul>
 
 </nav>
@@ -117,27 +130,67 @@
     <ul class="nav section-nav flex-column">
     
         <li class="nav-item toc-entry toc-h2">
+            <a href="#" class="nav-link">Demographics</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
             <a href="#age" class="nav-link">Age</a>
         </li>
     
-        <li class="nav-item toc-entry toc-h2">
+        <li class="nav-item toc-entry toc-h3">
             <a href="#gender" class="nav-link">Gender</a>
         </li>
     
-        <li class="nav-item toc-entry toc-h2">
+        <li class="nav-item toc-entry toc-h3">
             <a href="#language-preference" class="nav-link">Language Preference</a>
         </li>
     
-        <li class="nav-item toc-entry toc-h2">
+        <li class="nav-item toc-entry toc-h3">
             <a href="#country-of-residence" class="nav-link">Country of Residence</a>
         </li>
     
-        <li class="nav-item toc-entry toc-h2">
+        <li class="nav-item toc-entry toc-h3">
             <a href="#education" class="nav-link">Education</a>
         </li>
     
-        <li class="nav-item toc-entry toc-h2">
+        <li class="nav-item toc-entry toc-h3">
             <a href="#occupation" class="nav-link">Occupation</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#experience-and-usage" class="nav-link">Experience and Usage</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#programming-experience" class="nav-link">Programming Experience</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#programming-languages" class="nav-link">Programming Languages</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#numpy-version" class="nav-link">NumPy Version</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#primary-use-case" class="nav-link">Primary Use-Case</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#frequency-of-use" class="nav-link">Frequency of Use</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#numpy-components" class="nav-link">NumPy Components</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#numpy-c-extensions" class="nav-link">NumPy C-Extensions</a>
+        </li>
+    
+            </ul>
         </li>
     
     </ul>
@@ -167,7 +220,7 @@
 <span class="p">]</span>
 <span class="n">demographics_dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">({</span>
     <span class="s2">&quot;names&quot;</span><span class="p">:</span> <span class="n">column_names</span><span class="p">,</span>
-    <span class="s2">&quot;formats&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;&lt;U512&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">column_names</span><span class="p">),</span>
+    <span class="s2">&quot;formats&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;&lt;U600&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">column_names</span><span class="p">),</span>
 <span class="p">})</span>
 
 <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span>
@@ -485,14 +538,226 @@ degrees reported.</p>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cnts</span><span class="p">)))</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Number of Respondents&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Number of Respondents&#39;)
+<img alt="../_images/demographics_15_0.png" src="../_images/demographics_15_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="experience-and-usage">
+<h1>Experience and Usage<a class="headerlink" href="#experience-and-usage" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="programming-experience">
+<h2>Programming Experience<a class="headerlink" href="#programming-experience" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="c1"># Ascending order for figure</span>
+<span class="n">ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">exp_data</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">((</span><span class="s1">&#39;programming_exp&#39;</span><span class="p">,</span> <span class="s1">&#39;numpy_exp&#39;</span><span class="p">),</span> <span class="n">axes</span><span class="p">):</span>
+    <span class="c1"># Analysis</span>
+    <span class="n">prog_exp</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">exp_data</span><span class="p">][</span><span class="n">data</span><span class="p">[</span><span class="n">exp_data</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">]</span>
+    <span class="n">labels</span><span class="p">,</span> <span class="n">cnts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">prog_exp</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">cnts</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">cnts</span> <span class="o">/</span> <span class="n">cnts</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">labels</span><span class="p">,</span> <span class="n">cnts</span> <span class="o">=</span> <span class="n">labels</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span> <span class="n">cnts</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span>
+    <span class="c1"># Plotting</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cnts</span><span class="p">)),</span> <span class="n">cnts</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cnts</span><span class="p">)))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;General Programming Experience&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Percentage of Respondents&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Experience with NumPy&#39;</span><span class="p">);</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">autofmt_xdate</span><span class="p">();</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">();</span>
 </pre></div>
 </div>
-<img alt="../_images/demographics_15_1.png" src="../_images/demographics_15_1.png" />
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/demographics_17_0.png" src="../_images/demographics_17_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="programming-languages">
+<h2>Programming Languages<a class="headerlink" href="#programming-languages" title="Permalink to this headline">¶</a></h2>
+<p>Survey respondents reported being familiar with a wide range of other
+programming languages aside from Python.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pl</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;prog_lang&#39;</span><span class="p">][</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;prog_lang&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">]</span>
+<span class="n">num_respondents</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">pl</span><span class="p">)</span>
+<span class="c1"># Flatten &amp; remove &#39;Other&#39; write-in option</span>
+<span class="n">other</span> <span class="o">=</span> <span class="s1">&#39;Other (please specify, using commas to separate individual entries)&#39;</span>
+<span class="n">apl</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">pl</span><span class="p">:</span>
+    <span class="k">if</span> <span class="s1">&#39;Other&#39;</span> <span class="ow">in</span> <span class="n">row</span><span class="p">:</span>
+        <span class="n">row</span> <span class="o">=</span> <span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">row</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">continue</span>
+    <span class="n">apl</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">))</span>
+<span class="n">labels</span><span class="p">,</span> <span class="n">cnts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">apl</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">cnts</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">cnts</span> <span class="o">/</span> <span class="n">num_respondents</span>
+<span class="n">I</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">cnts</span><span class="p">)</span>
+<span class="n">labels</span><span class="p">,</span> <span class="n">cnts</span> <span class="o">=</span> <span class="n">labels</span><span class="p">[</span><span class="n">I</span><span class="p">],</span> <span class="n">cnts</span><span class="p">[</span><span class="n">I</span><span class="p">]</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cnts</span><span class="p">)),</span> <span class="n">cnts</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cnts</span><span class="p">)))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Percentage of Respondents&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Programming Language Familiarity&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/demographics_19_0.png" src="../_images/demographics_19_0.png" />
+</div>
+</div>
+<p><span class="pasted-text">19.0</span> percent of respondents reported familiarity with
+computer languages other than those listed above.
+Of these, <span class="pasted-text">Rust</span> was the most popular with
+<span class="pasted-text">4.0</span> percent of users using this language.
+A listing of other reported languages can be found below (click to expand).</p>
+<div class="cell tag_remove-input tag_hide-output docutils container">
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;apl&#39; &#39;asm&#39; &#39;assembler&#39; &#39;bash&#39; &#39;basic&#39; &#39;befunge&#39; &#39;brainfuck&#39; &#39;chapel&#39;
+ &#39;cobol&#39; &#39;common lisp&#39; &#39;crystal&#39; &#39;cuda&#39; &#39;dart&#39; &#39;delphi pascal&#39; &#39;elisp&#39;
+ &#39;emacs lisp&#39; &#39;fame&#39; &#39;flutter&#39; &#39;go&#39; &#39;golang&#39; &#39;groovy&#39; &#39;haskell&#39; &#39;html&#39;
+ &#39;idl&#39; &#39;igor pro&#39; &#39;it counts!&#39; &#39;kotlin&#39; &#39;kuin&#39; &#39;labview&#39; &#39;latex&#39; &#39;lisp&#39;
+ &#39;logo&#39; &#39;lua&#39; &#39;macaulay2&#39; &#39;mathematica&#39; &#39;modellica&#39; &#39;netlogo&#39; &#39;nim&#39; &#39;node&#39;
+ &#39;oberon&#39; &#39;ocaml&#39; &#39;octave&#39; &#39;pascal&#39; &#39;perl&#39; &#39;perl 5&#39; &#39;php&#39; &#39;postscript&#39;
+ &#39;processing&#39; &#39;prolog&#39; &#39;python&#39; &#39;q#&#39; &#39;racket&#39; &#39;rust&#39; &#39;sas&#39; &#39;scala&#39;
+ &#39;scheme&#39; &#39;shell&#39; &#39;shellscript&#39; &#39;smalltalk&#39; &#39;solidity&#39; &#39;spp&#39; &#39;sql&#39; &#39;swift&#39;
+ &#39;tcl&#39; &#39;turbo pascal&#39; &#39;turtle&#39; &#39;typescript&#39; &#39;unix&#39;
+ &#39;various assembly languages&#39; &#39;vba&#39; &#39;visual basic&#39;
+ &#39;visual basic for applications&#39; &#39;visual basic 🥳&#39; &#39;wolfram&#39; &#39;xslt&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="numpy-version">
+<h2>NumPy Version<a class="headerlink" href="#numpy-version" title="Permalink to this headline">¶</a></h2>
+<p>NumPy 1.18 was the latest stable release at the time the survey was
+conducted.
+<span class="pasted-text">12.3</span> percent of respondents report that they
+primarily use an older version of NumPy.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vers</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;version&#39;</span><span class="p">][</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;version&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">]</span>
+<span class="n">labels</span><span class="p">,</span> <span class="n">cnts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">vers</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">cnts</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span> <span class="n">autopct</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%1.1f%%</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+
+<span class="c1"># Percentage of users that use older versions</span>
+<span class="n">older_version_usage</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">cnts</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="n">cnts</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">glue</span><span class="p">(</span><span class="s1">&#39;older_version_usage&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">older_version_usage</span><span class="si">:</span><span class="s2">1.1f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/demographics_24_1.png" src="../_images/demographics_24_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="primary-use-case">
+<h2>Primary Use-Case<a class="headerlink" href="#primary-use-case" title="Permalink to this headline">¶</a></h2>
+<p>1072 respondents provided information about the primary context in which they
+use NumPy.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">uses</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;primary_use&#39;</span><span class="p">][</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;primary_use&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">]</span>
+<span class="n">labels</span><span class="p">,</span> <span class="n">cnts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">uses</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">cnts</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span> <span class="n">autopct</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%1.1f%%</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/demographics_26_0.png" src="../_images/demographics_26_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="frequency-of-use">
+<h2>Frequency of Use<a class="headerlink" href="#frequency-of-use" title="Permalink to this headline">¶</a></h2>
+<p>1073 respondents provided information about how often they use NumPy.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">use_freq</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;use_freq&#39;</span><span class="p">][</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;use_freq&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">]</span>
+<span class="n">labels</span><span class="p">,</span> <span class="n">cnts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">use_freq</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">cnts</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span> <span class="n">autopct</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%1.1f%%</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/demographics_28_0.png" src="../_images/demographics_28_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="numpy-components">
+<h2>NumPy Components<a class="headerlink" href="#numpy-components" title="Permalink to this headline">¶</a></h2>
+<p>NumPy encompasses many packages for specific scientific computing tasks, such
+as random number generation or Fourier analysis.
+The following figure shows what percentage of respondents reported using each
+NumPy subpackage.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">components</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;components&#39;</span><span class="p">][</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;components&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">]</span>
+<span class="n">num_respondents</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">components</span><span class="p">)</span>
+<span class="c1"># Process components field</span>
+<span class="n">all_components</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">components</span><span class="p">:</span>
+    <span class="n">all_components</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">))</span>
+<span class="n">all_components</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">all_components</span><span class="p">)</span>
+<span class="n">labels</span><span class="p">,</span> <span class="n">cnts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">all_components</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># Descending order</span>
+<span class="n">I</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">cnts</span><span class="p">)</span>
+<span class="n">labels</span><span class="p">,</span> <span class="n">cnts</span> <span class="o">=</span> <span class="n">labels</span><span class="p">[</span><span class="n">I</span><span class="p">],</span> <span class="n">cnts</span><span class="p">[</span><span class="n">I</span><span class="p">]</span>
+<span class="n">cnts</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">cnts</span> <span class="o">/</span> <span class="n">num_respondents</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cnts</span><span class="p">)),</span> <span class="n">cnts</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cnts</span><span class="p">)))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Percentage of Respondents&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Use-Frequency of NumPy Sub-Packages&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/demographics_30_0.png" src="../_images/demographics_30_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="numpy-c-extensions">
+<h2>NumPy C-Extensions<a class="headerlink" href="#numpy-c-extensions" title="Permalink to this headline">¶</a></h2>
+<p>863 participants shared whether they (or their organization) uses custom
+C-extensions via the NumPy C-API (excluding Cython).</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">uses_c_ext</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;use_c_ext&#39;</span><span class="p">]</span>
+<span class="n">labels</span><span class="p">,</span> <span class="n">cnts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">uses_c_ext</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">labels</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;No response&#39;</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">cnts</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span> <span class="n">autopct</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%1.1f%%</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/demographics_32_0.png" src="../_images/demographics_32_0.png" />
 </div>
 </div>
 </div>
@@ -505,6 +770,7 @@ degrees reported.</p>
               <div class='prev-next-bottom'>
                 
     <a class='left-prev' id="prev-link" href="../index.html" title="previous page">NumPy Community Survey Results - 2020</a>
+    <a class='right-next' id="next-link" href="contributions.html" title="next page">Development and Community Contributions</a>
 
               </div>
               

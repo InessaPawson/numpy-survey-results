@@ -1,0 +1,351 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Development and Community Contributions &#8212; NumPy Community Survey 2020  documentation</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.30270b6e4c972e43c488.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Demographics" href="demographics.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
+<div class="container-xl">
+
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
+      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+        
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="demographics.html">Demographics</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href=""></a>
+        </li>
+        
+        <li class="nav-item active">
+            <a class="nav-link" href="">Development and Community Contributions</a>
+        </li>
+        
+        
+      </ul>
+
+
+      
+
+      <ul class="navbar-nav">
+        
+        
+      </ul>
+    </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+          <div class="col-12 col-md-3 bd-sidebar">
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+  <div class="bd-toc-item active">
+  
+
+  <ul class="nav bd-sidenav">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+    </ul>
+
+</nav>
+          </div>
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+    </ul>
+</nav>
+
+
+              
+          </div>
+          
+
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="development-and-community-contributions">
+<h1>Development and Community Contributions<a class="headerlink" href="#development-and-community-contributions" title="Permalink to this headline">¶</a></h1>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load data related to open-source contributions *other* than NumPy</span>
+
+<span class="n">fname</span> <span class="o">=</span> <span class="s2">&quot;data/numpy_survey_results.tsv&quot;</span>
+<span class="n">column_names</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;contributed&#39;</span><span class="p">,</span> <span class="s1">&#39;projects&#39;</span><span class="p">,</span> <span class="s1">&#39;projects_other&#39;</span><span class="p">,</span> <span class="s1">&#39;contr_type&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;contr_type_other&#39;</span><span class="p">,</span> <span class="s1">&#39;regular&#39;</span><span class="p">,</span> <span class="s1">&#39;how_got_started&#39;</span><span class="p">,</span> <span class="s1">&#39;how_got_started_other&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;interest&#39;</span><span class="p">,</span> <span class="s1">&#39;limitations&#39;</span>
+<span class="p">]</span>
+<span class="n">nonnumpy_contributions_dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">({</span>
+    <span class="s2">&quot;names&quot;</span><span class="p">:</span> <span class="n">column_names</span><span class="p">,</span>
+    <span class="s2">&quot;formats&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;&lt;U1024&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">column_names</span><span class="p">),</span>
+<span class="p">})</span>
+
+<span class="n">ossdata</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span>
+    <span class="n">fname</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">nonnumpy_contributions_dtype</span><span class="p">,</span> 
+    <span class="n">usecols</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">31</span><span class="p">,</span> <span class="mi">42</span><span class="p">),</span> <span class="n">comments</span><span class="o">=</span><span class="kc">None</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load data related to NumPy contributions</span>
+<span class="n">column_names</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;contributed&#39;</span><span class="p">,</span> <span class="s1">&#39;contr_type&#39;</span><span class="p">,</span> <span class="s1">&#39;contr_type_other&#39;</span><span class="p">,</span> <span class="s1">&#39;regular&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;how_got_started&#39;</span><span class="p">,</span> <span class="s1">&#39;how_got_started_other&#39;</span><span class="p">,</span> <span class="s1">&#39;motivations&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;motivations_other&#39;</span><span class="p">,</span> <span class="s1">&#39;continue&#39;</span><span class="p">,</span> <span class="s1">&#39;limitations&#39;</span><span class="p">,</span> <span class="s1">&#39;limitations_other&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;interested&#39;</span><span class="p">,</span> <span class="s1">&#39;interests&#39;</span><span class="p">,</span> <span class="s1">&#39;interests_other&#39;</span>
+<span class="p">]</span>
+
+<span class="n">numpy_contributions_dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">({</span>
+    <span class="s2">&quot;names&quot;</span><span class="p">:</span> <span class="n">column_names</span><span class="p">,</span>
+    <span class="s2">&quot;formats&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;&lt;U1024&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">column_names</span><span class="p">),</span>
+<span class="p">})</span>
+
+<span class="n">npdata</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span>
+    <span class="n">fname</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">numpy_contributions_dtype</span><span class="p">,</span> 
+    <span class="n">usecols</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">42</span><span class="p">,</span> <span class="mi">57</span><span class="p">),</span> <span class="n">comments</span><span class="o">=</span><span class="kc">None</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">npdata</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">ossdata</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># Sanity check on data</span>
+<span class="c1"># Selection criteria for subsequent analysis</span>
+<span class="n">oss_contributors_mask</span> <span class="o">=</span> <span class="n">ossdata</span><span class="p">[</span><span class="s1">&#39;contributed&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Yes&#39;</span>
+<span class="n">np_contributors_mask</span> <span class="o">=</span> <span class="n">npdata</span><span class="p">[</span><span class="s1">&#39;contributed&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Yes&#39;</span>
+<span class="c1"># Compute some basic parameters on OSS/np-specific contributions</span>
+<span class="n">num_respondents</span> <span class="o">=</span> <span class="n">npdata</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">num_oss_contributors</span> <span class="o">=</span> <span class="n">oss_contributors_mask</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">num_np_contributors</span> <span class="o">=</span> <span class="n">np_contributors_mask</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">num_both_contributors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">oss_contributors_mask</span> <span class="o">&amp;</span> <span class="n">np_contributors_mask</span><span class="p">)</span>
+<span class="c1"># Links for report</span>
+<span class="n">glue</span><span class="p">(</span><span class="s1">&#39;num_respondents&#39;</span><span class="p">,</span> <span class="n">npdata</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span>
+<span class="n">glue</span><span class="p">(</span>
+    <span class="s1">&#39;oss_contributors&#39;</span><span class="p">,</span>
+    <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">num_oss_contributors</span><span class="si">}</span><span class="s1"> (</span><span class="si">{</span><span class="mi">100</span> <span class="o">*</span> <span class="n">num_oss_contributors</span> <span class="o">/</span> <span class="n">num_respondents</span><span class="si">:</span><span class="s1">1.0f</span><span class="si">}</span><span class="s1">%)&#39;</span><span class="p">,</span>
+    <span class="n">display</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+<span class="n">glue</span><span class="p">(</span>
+    <span class="s1">&#39;np_contributors&#39;</span><span class="p">,</span>
+    <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">num_np_contributors</span><span class="si">}</span><span class="s1"> (</span><span class="si">{</span><span class="mi">100</span> <span class="o">*</span> <span class="n">num_np_contributors</span> <span class="o">/</span> <span class="n">num_respondents</span><span class="si">:</span><span class="s1">1.0f</span><span class="si">}</span><span class="s1">%)&#39;</span><span class="p">,</span>
+    <span class="n">display</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+<span class="n">glue</span><span class="p">(</span>
+    <span class="s1">&#39;numpy_and_oss_contributors&#39;</span><span class="p">,</span>
+    <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">num_both_contributors</span><span class="si">}</span><span class="s1"> (</span><span class="si">{</span><span class="mi">100</span> <span class="o">*</span> <span class="n">num_both_contributors</span> <span class="o">/</span> <span class="n">num_np_contributors</span><span class="si">:</span><span class="s1">1.0f</span><span class="si">}</span><span class="s1">%)&#39;</span><span class="p">,</span>
+    <span class="n">display</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>Of the <span class="pasted-text">1236</span> survey participants,
+<span class="pasted-text">490 (40%)</span> have contributed to at least one open source
+software project, while <span class="pasted-text">88 (7%)</span> have contributed to
+NumPy specifically.
+Reflecting its central position in the scientific Python ecosystem,
+<span class="pasted-text">85 (97%)</span> of NumPy contributors reported
+contributing to other OSS projects as well.
+The following figure illustrates shows what fraction of contributors are
+working on various popular scientific Python projects.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Helper function for collating data</span>
+<span class="k">def</span> <span class="nf">flatten</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">):</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="n">out</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">delimiter</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">out</span>
+<span class="c1"># Remove less-popular projects</span>
+<span class="n">projects_to_drop</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s1">&#39;Gensim&#39;</span><span class="p">,</span> <span class="s1">&#39;spaCy&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Other (please specify - use commas to separate multiple entries)&#39;</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">start_ind</span><span class="p">,</span> <span class="n">mask</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span>
+    <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> 
+    <span class="p">(</span><span class="n">oss_contributors_mask</span><span class="p">,</span> <span class="n">np_contributors_mask</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;Non-NumPy Contributors&#39;</span><span class="p">,</span> <span class="s1">&#39;NumPy Contributors&#39;</span><span class="p">)</span>
+<span class="p">):</span>
+    <span class="n">project_data</span> <span class="o">=</span> <span class="n">flatten</span><span class="p">(</span><span class="n">ossdata</span><span class="p">[</span><span class="s1">&#39;projects&#39;</span><span class="p">][</span><span class="n">mask</span><span class="p">])</span>
+    <span class="n">labels</span><span class="p">,</span> <span class="n">cnts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">project_data</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="c1"># Projects to drop from all datasets</span>
+    <span class="k">for</span> <span class="n">proj</span> <span class="ow">in</span> <span class="n">projects_to_drop</span><span class="p">:</span>
+        <span class="n">drop</span> <span class="o">=</span> <span class="p">(</span><span class="n">labels</span> <span class="o">!=</span> <span class="n">proj</span><span class="p">)</span>
+        <span class="n">labels</span><span class="p">,</span> <span class="n">cnts</span> <span class="o">=</span> <span class="n">labels</span><span class="p">[</span><span class="n">drop</span><span class="p">],</span> <span class="n">cnts</span><span class="p">[</span><span class="n">drop</span><span class="p">]</span>
+    <span class="c1"># Plot</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">start_ind</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">),</span> <span class="mi">2</span><span class="p">),</span>
+        <span class="mi">100</span> <span class="o">*</span> <span class="n">cnts</span> <span class="o">/</span> <span class="n">cnts</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span>
+        <span class="n">align</span><span class="o">=</span><span class="s1">&#39;edge&#39;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">,</span>
+    <span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">start_ind</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">),</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Percentage of Contributors&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/contributions_6_0.png" src="../_images/contributions_6_0.png" />
+</div>
+</div>
+<p>We also asked <strong>in what ways</strong> people are contributing to open-source software
+projects.
+The following figure shows what percentage of contributors reported participating
+in some common tasks.</p>
+<div class="cell tag_hidden-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">oss_contr_type</span> <span class="o">=</span> <span class="n">flatten</span><span class="p">(</span><span class="n">ossdata</span><span class="p">[</span><span class="s1">&#39;contr_type&#39;</span><span class="p">][</span><span class="n">oss_contributors_mask</span><span class="p">])</span>
+<span class="n">np_contr_type</span> <span class="o">=</span> <span class="n">flatten</span><span class="p">(</span><span class="n">npdata</span><span class="p">[</span><span class="s1">&#39;contr_type&#39;</span><span class="p">][</span><span class="n">np_contributors_mask</span><span class="p">])</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
+<span class="c1"># NOTE: Unfortunately, the categories for the OSS &amp; np contributions aren&#39;t </span>
+<span class="c1"># the same, so direct comparison is more difficult.</span>
+<span class="c1"># Handle each dataset separately.</span>
+<span class="n">labels</span><span class="p">,</span> <span class="n">cnts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">np_contr_type</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># Ignore duplicate categories from bad split</span>
+<span class="n">labels</span><span class="p">,</span> <span class="n">cnts</span> <span class="o">=</span> <span class="n">labels</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">cnts</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="n">I</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">cnts</span><span class="p">)</span>
+<span class="n">labels</span><span class="p">,</span> <span class="n">cnts</span> <span class="o">=</span> <span class="n">labels</span><span class="p">[</span><span class="n">I</span><span class="p">],</span> <span class="n">cnts</span><span class="p">[</span><span class="n">I</span><span class="p">]</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;NumPy Contributions&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">)),</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">cnts</span> <span class="o">/</span> <span class="n">np_contributors_mask</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">align</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">)))</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Percentage of NumPy Contributors&#39;</span><span class="p">)</span>
+<span class="n">labels</span><span class="p">,</span> <span class="n">cnts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">oss_contr_type</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">labels</span><span class="p">,</span> <span class="n">cnts</span> <span class="o">=</span> <span class="n">labels</span><span class="p">[</span><span class="mi">3</span><span class="p">:],</span> <span class="n">cnts</span><span class="p">[</span><span class="mi">3</span><span class="p">:]</span>
+<span class="c1"># TODO: Remove these hacks when categories have been synchronized</span>
+<span class="n">labels</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Developing tutorials&#39;</span>
+<span class="n">labels</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Writing documentation&#39;</span>
+<span class="n">I</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">cnts</span><span class="p">)</span>
+<span class="n">labels</span><span class="p">,</span> <span class="n">cnts</span> <span class="o">=</span> <span class="n">labels</span><span class="p">[</span><span class="n">I</span><span class="p">],</span> <span class="n">cnts</span><span class="p">[</span><span class="n">I</span><span class="p">]</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Other (non-NumPy) OSS Contributions&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">)),</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">cnts</span> <span class="o">/</span> <span class="n">oss_contributors_mask</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">align</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">)))</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Percentage of OSS Contributors&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/contributions_8_0.png" src="../_images/contributions_8_0.png" />
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="demographics.html" title="previous page">Demographics</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.30270b6e4c972e43c488.js"></script>
+
+
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    <p>
+          &copy; Copyright 2020, NumPy Survey Team.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.2.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
