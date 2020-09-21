@@ -52,6 +52,10 @@
 <div class="container-xl">
 
     
+    <a class="navbar-brand" href="../index.html">
+      <img src="../_static/numpylogo.svg" class="logo" alt="logo">
+    </a>
+    
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -82,6 +86,18 @@
         
         <li class="nav-item ">
             <a class="nav-link" href="mentorship.html">Mentorship</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="priorities.html">Project Priorities</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="features_and_deprecations.html">Features, Problems, and Deprecations</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="biggest_impact.html">The Big Picture</a>
         </li>
         
         
@@ -123,6 +139,12 @@
       
       
         
+      
+      
+      
+      
+      
+      
       
       
       
@@ -274,27 +296,27 @@
 <span class="n">glue</span><span class="p">(</span><span class="s1">&#39;num_respondents&#39;</span><span class="p">,</span> <span class="n">npdata</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span>
 <span class="n">glue</span><span class="p">(</span>
     <span class="s1">&#39;oss_contributors&#39;</span><span class="p">,</span>
-    <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">num_oss_contributors</span><span class="si">}</span><span class="s1"> (</span><span class="si">{</span><span class="mi">100</span> <span class="o">*</span> <span class="n">num_oss_contributors</span> <span class="o">/</span> <span class="n">num_respondents</span><span class="si">:</span><span class="s1">1.0f</span><span class="si">}</span><span class="s1">%)&#39;</span><span class="p">,</span>
+    <span class="n">gluval</span><span class="p">(</span><span class="n">num_oss_contributors</span><span class="p">,</span> <span class="n">num_respondents</span><span class="p">),</span>
     <span class="n">display</span><span class="o">=</span><span class="kc">False</span>
 <span class="p">)</span>
 <span class="n">glue</span><span class="p">(</span>
     <span class="s1">&#39;np_contributors&#39;</span><span class="p">,</span>
-    <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">num_np_contributors</span><span class="si">}</span><span class="s1"> (</span><span class="si">{</span><span class="mi">100</span> <span class="o">*</span> <span class="n">num_np_contributors</span> <span class="o">/</span> <span class="n">num_respondents</span><span class="si">:</span><span class="s1">1.0f</span><span class="si">}</span><span class="s1">%)&#39;</span><span class="p">,</span>
+    <span class="n">gluval</span><span class="p">(</span><span class="n">num_np_contributors</span><span class="p">,</span> <span class="n">num_respondents</span><span class="p">),</span>
     <span class="n">display</span><span class="o">=</span><span class="kc">False</span>
 <span class="p">)</span>
 <span class="n">glue</span><span class="p">(</span>
     <span class="s1">&#39;numpy_and_oss_contributors&#39;</span><span class="p">,</span>
-    <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">num_both_contributors</span><span class="si">}</span><span class="s1"> (</span><span class="si">{</span><span class="mi">100</span> <span class="o">*</span> <span class="n">num_both_contributors</span> <span class="o">/</span> <span class="n">num_np_contributors</span><span class="si">:</span><span class="s1">1.0f</span><span class="si">}</span><span class="s1">%)&#39;</span><span class="p">,</span>
+    <span class="n">gluval</span><span class="p">(</span><span class="n">num_both_contributors</span><span class="p">,</span> <span class="n">num_np_contributors</span><span class="p">),</span>
     <span class="n">display</span><span class="o">=</span><span class="kc">False</span>
 <span class="p">)</span>
 <span class="n">glue</span><span class="p">(</span>
     <span class="s1">&#39;oss_regulars&#39;</span><span class="p">,</span>
-    <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">num_oss_regular</span><span class="si">}</span><span class="s1"> (</span><span class="si">{</span><span class="mi">100</span> <span class="o">*</span> <span class="n">num_oss_regular</span> <span class="o">/</span> <span class="n">num_oss_contributors</span><span class="si">:</span><span class="s1">1.0f</span><span class="si">}</span><span class="s1">%)&#39;</span><span class="p">,</span>
+    <span class="n">gluval</span><span class="p">(</span><span class="n">num_oss_regular</span><span class="p">,</span> <span class="n">num_oss_contributors</span><span class="p">),</span>
     <span class="n">display</span><span class="o">=</span><span class="kc">False</span>
 <span class="p">)</span>
 <span class="n">glue</span><span class="p">(</span>
     <span class="s1">&#39;np_regulars&#39;</span><span class="p">,</span>
-    <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">num_np_regular</span><span class="si">}</span><span class="s1"> (</span><span class="si">{</span><span class="mi">100</span> <span class="o">*</span> <span class="n">num_np_regular</span> <span class="o">/</span> <span class="n">num_np_contributors</span><span class="si">:</span><span class="s1">1.0f</span><span class="si">}</span><span class="s1">%)&#39;</span><span class="p">,</span>
+    <span class="n">gluval</span><span class="p">(</span><span class="n">num_np_regular</span><span class="p">,</span> <span class="n">num_np_contributors</span><span class="p">),</span>
     <span class="n">display</span><span class="o">=</span><span class="kc">False</span>
 <span class="p">)</span>
 </pre></div>
@@ -323,13 +345,7 @@ contributing to other OSS projects as well.</p>
 working on various popular scientific Python projects.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Helper function for collating data</span>
-<span class="k">def</span> <span class="nf">flatten</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">):</span>
-    <span class="n">out</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
-        <span class="n">out</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">delimiter</span><span class="p">))</span>
-    <span class="k">return</span> <span class="n">out</span>
-<span class="c1"># Remove less-popular projects</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Remove less-popular projects</span>
 <span class="n">projects_to_drop</span> <span class="o">=</span> <span class="p">(</span>
     <span class="s1">&#39;Gensim&#39;</span><span class="p">,</span> <span class="s1">&#39;spaCy&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
     <span class="s1">&#39;Other (please specify - use commas to separate multiple entries)&#39;</span>
@@ -479,7 +495,7 @@ they contribute to:</p>
 <h2>Retention<a class="headerlink" href="#retention" title="Permalink to this headline">¶</a></h2>
 <p>Finally, we asked NumPy contributors whether they plan to continue to
 contribute to NumPy.
-<span class="pasted-text">100%</span> of survey participants who identified
+<span class="pasted-text">16 (100%)</span> of survey participants who identified
 themselves as regular NumPy contributors plan to continue contributing.
 Of the <span class="pasted-text">72</span> NumPy contributors who did
 not consider themselves <em>regular</em> contributors, <span class="pasted-text">81%</span>
@@ -490,7 +506,7 @@ plan to continue contributing.</p>
 <span class="n">regular_continue</span> <span class="o">=</span> <span class="n">npdata</span><span class="p">[</span><span class="s1">&#39;continue&#39;</span><span class="p">][</span><span class="n">np_regular_mask</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Yes&#39;</span>
 <span class="n">glue</span><span class="p">(</span>
     <span class="s1">&#39;regular_continue_pct&#39;</span><span class="p">,</span>
-    <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="mi">100</span> <span class="o">*</span> <span class="n">regular_continue</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="n">np_regular_mask</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">:</span><span class="s1">1.0f</span><span class="si">}</span><span class="s1">%&#39;</span><span class="p">,</span>
+    <span class="n">gluval</span><span class="p">(</span><span class="n">regular_continue</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">np_regular_mask</span><span class="o">.</span><span class="n">sum</span><span class="p">()),</span>
     <span class="n">display</span><span class="o">=</span><span class="kc">False</span>
 <span class="p">)</span>
 <span class="n">non_regular_contributor_mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">np_contributors_mask</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="o">~</span><span class="n">np_regular_mask</span><span class="p">)</span>
@@ -522,15 +538,23 @@ not directly contributed back to project — is there generally interest in
 doing so? What are the biggest stumbling blocks for users who want to
 contribute back?
 Of the <span class="pasted-text">1236</span> survey respondents,
-<span class="pasted-text">547</span> report never having contributed to an OSS
-project and <span class="pasted-text">920</span> report never having contributed to
+<span class="pasted-text">547 (44%)</span> report never having contributed to an OSS
+project and <span class="pasted-text">920 (74%)</span> report never having contributed to
 NumPy specifically.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_oss_non_contributors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ossdata</span><span class="p">[</span><span class="s1">&#39;contributed&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;No&#39;</span><span class="p">)</span>
 <span class="n">num_np_non_contributors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">npdata</span><span class="p">[</span><span class="s1">&#39;contributed&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;No&#39;</span><span class="p">)</span>
-<span class="n">glue</span><span class="p">(</span><span class="s1">&#39;oss_non_contributors&#39;</span><span class="p">,</span> <span class="n">num_oss_non_contributors</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">glue</span><span class="p">(</span><span class="s1">&#39;np_non_contributors&#39;</span><span class="p">,</span> <span class="n">num_np_non_contributors</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">glue</span><span class="p">(</span>
+    <span class="s1">&#39;oss_non_contributors&#39;</span><span class="p">,</span>
+    <span class="n">gluval</span><span class="p">(</span><span class="n">num_oss_non_contributors</span><span class="p">,</span> <span class="n">num_respondents</span><span class="p">),</span>
+    <span class="n">display</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+<span class="n">glue</span><span class="p">(</span>
+    <span class="s1">&#39;np_non_contributors&#39;</span><span class="p">,</span>
+    <span class="n">gluval</span><span class="p">(</span><span class="n">num_np_non_contributors</span><span class="p">,</span> <span class="n">num_respondents</span><span class="p">),</span>
+    <span class="n">display</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -549,12 +573,12 @@ generally, and <span class="pasted-text">627 (68%)</span> to NumPy specifically.
 <span class="n">np_interested_mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">npdata</span><span class="p">[</span><span class="s1">&#39;contributed&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;No&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">npdata</span><span class="p">[</span><span class="s1">&#39;interested&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Yes&#39;</span><span class="p">)</span>
 <span class="n">glue</span><span class="p">(</span>
     <span class="s1">&#39;oss_interested&#39;</span><span class="p">,</span>
-    <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">oss_interested_mask</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s1"> (</span><span class="si">{</span><span class="mi">100</span> <span class="o">*</span> <span class="n">oss_interested_mask</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="n">num_oss_non_contributors</span><span class="si">:</span><span class="s1">1.0f</span><span class="si">}</span><span class="s1">%)&#39;</span><span class="p">,</span>
+    <span class="n">gluval</span><span class="p">(</span><span class="n">oss_interested_mask</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">num_oss_non_contributors</span><span class="p">),</span>
     <span class="n">display</span><span class="o">=</span><span class="kc">False</span>
 <span class="p">)</span>
 <span class="n">glue</span><span class="p">(</span>
     <span class="s1">&#39;np_interested&#39;</span><span class="p">,</span>
-    <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">np_interested_mask</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s1"> (</span><span class="si">{</span><span class="mi">100</span> <span class="o">*</span> <span class="n">np_interested_mask</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="n">num_np_non_contributors</span><span class="si">:</span><span class="s1">1.0f</span><span class="si">}</span><span class="s1">%)&#39;</span><span class="p">,</span>
+    <span class="n">gluval</span><span class="p">(</span><span class="n">np_interested_mask</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">num_np_non_contributors</span><span class="p">),</span>
     <span class="n">display</span><span class="o">=</span><span class="kc">False</span>
 <span class="p">)</span>
 </pre></div>
